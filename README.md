@@ -13,6 +13,11 @@ counterparts.
 
 In the past this project was known as *pysnmp-apps*.
 
+Why this fork?
+--------------
+[Original project](https://github.com/etingof/snmpclitools) by [Ilya Etingof](https://github.com/etingof) seems not to be continued anymore.
+Because of that, we try to maintain / enhance Command-line SNMP tools.
+
 Features
 --------
 
@@ -80,6 +85,8 @@ Feedback and collaboration
 
 I'm interested in bug reports, fixes, suggestions and improvements. Your
 pull requests are very welcome!
+
+If you want to contact us, please mail to the [Thola Team](mailto:snmplabs@thola.io)
 
 Copyright (c) 2005-2019, [Ilya Etingof](mailto:etingof@gmail.com). All rights reserved.
 
