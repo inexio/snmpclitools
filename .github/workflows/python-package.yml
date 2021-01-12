@@ -33,6 +33,6 @@ jobs:
        pip install -r requirements.txt -r devel-requirements.txt
        pip install -e .
        
-    - name: Test with pytest
+    - name: Run test
       run: |
-       sh runtests.sh
+       ./runtests.sh
