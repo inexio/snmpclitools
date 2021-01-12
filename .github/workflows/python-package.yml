@@ -34,4 +34,6 @@ jobs:
        
     - name: Run test
       run: |
-       ./runtests.sh
+        export CURRENTPATH=`pwd`
+        export PATH="$PATH:$CURRENTPATH/venv/bin"
+        ./runtests.sh
