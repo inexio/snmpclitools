@@ -31,11 +31,11 @@ jobs:
        pip --version
        pip install -r requirements.txt -r devel-requirements.txt
        pip install -e .
-       pip install --force-reinstall pysnmp
-       pip install --force-reinstall snmpclitools
        
     - name: Run test
       run: |
+        pip install --force-reinstall pysnmp
+        pip install --force-reinstall snmpclitools
         export CURRENTPATH=`pwd`
         export PATH="$PATH:$CURRENTPATH/venv/bin"
         ./runtests.sh
