@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-docker run -p 161:161/udp thola/snmpsim
+docker run -d --rm -p 161:161/udp thola/snmpsim
 set -e
 
 for cred in "-v3 -u usr-none-none -l noAuthNoPriv localhost" \
