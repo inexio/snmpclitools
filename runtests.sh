@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-docker run -v /somewhere/with/snmpwalks:/usr/local/snmpsim/data \
+docker run -v ./testdata/devices:/usr/local/snmpsim/data \
            -p 161:161/udp \
            thola/snmpsim
 set -e
