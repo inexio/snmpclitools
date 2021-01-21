@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+docker-compose up --detach --build
 set -e
 
 for cred in "-v3 -u usr-none-none -l noAuthNoPriv demo.snmplabs.com" \
@@ -37,3 +38,5 @@ do
 done
 
 python scripts/snmptranslate.py IF-MIB::linkUp
+
+docker-compose down
