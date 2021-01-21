@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-docker-compose up --detach --build
+docker run -v /somewhere/with/snmpwalks:/usr/local/snmpsim/data \
+           -p 161:161/udp \
+           thola/snmpsim
 set -e
 
 for cred in "-v3 -u usr-none-none -l noAuthNoPriv demo.snmplabs.com" \
