@@ -5,14 +5,14 @@ docker run --rm  -p 161:161/udp thola/snmpsim
 
 set -e
 
-for cred in "-v3 -u usr-none-none -l noAuthNoPriv demo.snmplabs.com" \
-            "-v3 -u usr-md5-none -l authNoPriv -A authkey1 demo.snmplabs.com" \
-            "-v3 -u usr-sha-aes -a SHA -x AES -l authPriv -A authkey1 -X privkey1 demo.snmplabs.com" \
-            "-v3 -u usr-md5-aes -x AES -l authPriv -A authkey1 -X privkey1 demo.snmplabs.com" \
-            "-v3 -u usr-sha-des -a SHA -l authPriv -A authkey1 -X privkey1 demo.snmplabs.com" \
-            "-v3 -u usr-sha-aes256 -a SHA -x AES256 -l authPriv -A authkey1 -X privkey1 demo.snmplabs.com" \
-            "-v2c -c public demo.snmplabs.com" \
-            "-v1 -c public demo.snmplabs.com"
+for cred in "-v3 -u usr-none-none -l noAuthNoPriv localhost" \
+            "-v3 -u usr-md5-none -l authNoPriv -A authkey1 localhost" \
+            "-v3 -u usr-sha-aes -a SHA -x AES -l authPriv -A authkey1 -X privkey1 localhost" \
+            "-v3 -u usr-md5-aes -x AES -l authPriv -A authkey1 -X privkey1 localhost" \
+            "-v3 -u usr-sha-des -a SHA -l authPriv -A authkey1 -X privkey1 localhost" \
+            "-v3 -u usr-sha-aes256 -a SHA -x AES256 -l authPriv -A authkey1 -X privkey1 localhost" \
+            "-v2c -c public localhost" \
+            "-v1 -c public localhost"
 do
     for x in snmpget.py \
              snmpwalk.py \
