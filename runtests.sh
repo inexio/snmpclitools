@@ -1,18 +1,15 @@
 #!/usr/bin/env bash
-
-docker run --rm  -p 161:161/udp tandrup/snmpsim
           
-
 set -e
 
-for cred in "-v3 -u usr-none-none -l noAuthNoPriv localhost" \
-            "-v3 -u usr-md5-none -l authNoPriv -A authkey1 localhost" \
-            "-v3 -u usr-sha-aes -a SHA -x AES -l authPriv -A authkey1 -X privkey1 localhost" \
-            "-v3 -u usr-md5-aes -x AES -l authPriv -A authkey1 -X privkey1 localhost" \
-            "-v3 -u usr-sha-des -a SHA -l authPriv -A authkey1 -X privkey1 localhost" \
-            "-v3 -u usr-sha-aes256 -a SHA -x AES256 -l authPriv -A authkey1 -X privkey1 localhost" \
-            "-v2c -c public localhost" \
-            "-v1 -c public localhost"
+for cred in "-v3 -u usr-none-none -l noAuthNoPriv demo-snmp.thola.io" \
+            "-v3 -u usr-md5-none -l authNoPriv -A authkey1 demo-snmp.thola.io" \
+            "-v3 -u usr-sha-aes -a SHA -x AES -l authPriv -A authkey1 -X privkey1 demo-snmp.thola.io" \
+            "-v3 -u usr-md5-aes -x AES -l authPriv -A authkey1 -X privkey1 demo-snmp.thola.io" \
+            "-v3 -u usr-sha-des -a SHA -l authPriv -A authkey1 -X privkey1 demo-snmp.thola.io" \
+            "-v3 -u usr-sha-aes256 -a SHA -x AES256 -l authPriv -A authkey1 -X privkey1 demo-snmp.thola.io" \
+            "-v2c -c public demo-snmp.thola.io" \
+            "-v1 -c public demo-snmp.thola.io"
 do
     for x in snmpget.py \
              snmpwalk.py \
