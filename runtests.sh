@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-docker run --rm  -p 161:161/udp thola/snmpsim
+docker run --rm  -p 161:161/udp tandrup/snmpsim
           
 
 set -e
