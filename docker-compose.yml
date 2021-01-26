@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  snmpsim1:
+    image: tandrup/snmpsim:latest
+    volumes:
+      - ${THOLA_TEST_SNMPRECDIR}:/usr/local/snmpsim/data/
+    networks:
+      tholanetwork:
+        ipv4_address: 172.20.0.8
+ 
+
+networks:
+  tholanetwork:
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
