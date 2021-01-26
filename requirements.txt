@@ -1,2 +1,3 @@
 pysmi>=0.3.4,<0.4.0
 pysnmp>=4.4.11,<5.0.0
+pysnmp-mibs
